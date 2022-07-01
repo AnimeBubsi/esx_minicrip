@@ -10,7 +10,7 @@ AddEventHandler('esx_minicrip:rikki', function()
     local radio = xPlayer.getInventoryItem('radio').count
 
     if puhelin > 0 then
-        xPlayer.addInventoryItem('rphone', puhelin)
+        xPlayer.addInventoryItem('rpuhelin', puhelin)
         xPlayer.removeInventoryItem('phone', puhelin)
 	xPlayer.showNotification('Vesi ~r~rikkoi puhelimesi')
     elseif radio > 0 then
@@ -20,6 +20,20 @@ AddEventHandler('esx_minicrip:rikki', function()
   end
 end)
 
+RegisterServerEvent('esx_minicrip:Mrikki')
+AddEventHandler('esx_minicrip:Mrikki', function()
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local rikki = math.random(1, 10)-- chance to plastic bag broke its now 1/10
+
+	if Config.Mrikki then
+	if rikki == 1 then
+	   xPlayer.removeInventoryItem('mcp', 1)
+	   xPlayer.showNotification('Minigrip pussiin tuli reikä jonka takia heitit sen pois')
+  	else
+       end
+    end
+end)
+
 RegisterServerEvent('esx_minicrip:Radio')
 AddEventHandler('esx_minicrip:Radio', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
@@ -27,6 +41,7 @@ AddEventHandler('esx_minicrip:Radio', function()
 	xPlayer.addInventoryItem('radio', 1)
         xPlayer.addInventoryItem('mcp', 1)
         xPlayer.removeInventoryItem('mcpr',1)
+	xPlayer.showNotification('Laitot radion pussiin')
 end)
 
 RegisterServerEvent('esx_minicrip:Puhelin')
@@ -36,12 +51,13 @@ AddEventHandler('esx_minicrip:Puhelin', function()
 	xPlayer.addInventoryItem('phone', 1)
         xPlayer.addInventoryItem('mcp', 1)
         xPlayer.removeInventoryItem('mcpp',1)
+	xPlayer.showNotification('Laitot puhelimen pussiin')
 end)
 
 ESX.RegisterUsableItem('mcp', function(source)
     local xPlayer = ESX.GetPlayerFromId(source)
     local puhelin = xPlayer.getInventoryItem('phone').count
-    local radio = xPlayer.getInventoryItem('radio').count
+    local radio = xPlayer.getInventoryItem('radio').count -- You can add new items its very simple but if you need help contact me in discord Bubsi#6775
   
     if radio > 0 then
 	TriggerClientEvent('esx_minicrip:pakkausR', source)
