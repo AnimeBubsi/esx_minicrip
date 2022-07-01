@@ -14,7 +14,9 @@ AddEventHandler('esx_minicrip:pakkausP', function()
         exports['progressBars']:startUI(3000, 'Pakkaat Puhelinta')
         Citizen.Wait(3000)
         ClearPedTasksImmediately(PlayerPedId())
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
 	else
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
    end
 end)
 
@@ -25,7 +27,9 @@ AddEventHandler('esx_minicrip:pakkausR', function()
         exports['progressBars']:startUI(3000, 'Pakkaat Radiota')
         Citizen.Wait(3000)
         ClearPedTasksImmediately(PlayerPedId())
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
 	else
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
    end
 end)
 
@@ -36,7 +40,9 @@ AddEventHandler('esx_minicrip:poistoP', function()
         exports['progressBars']:startUI(3000, 'Poistat puhelinta pussista')
         Citizen.Wait(3000)
         ClearPedTasksImmediately(PlayerPedId())
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
 	else
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
    end
 end)
 
@@ -47,7 +53,9 @@ AddEventHandler('esx_minicrip:poistoR', function()
         exports['progressBars']:startUI(3000, 'Poistat radiota pussista')
         Citizen.Wait(3000)
         ClearPedTasksImmediately(PlayerPedId())
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
 	else
+	TriggerServerEvent('esx_minicrip:Mrikki', source)
    end
 end)
 
@@ -61,4 +69,3 @@ Citizen.CreateThread(function()
 	 	end
 	end
 end)
-
