@@ -62,7 +62,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
-		if not IsPedInAnyVehicle(Pelaaja, false) then 
+		if not IsPedInAnyVehicle(PlayerPedId(), false) then 
 		if IsPedSwimming(PlayerPedId()) then
 			TriggerServerEvent('esx_minicrip:rikki')
 		   end
